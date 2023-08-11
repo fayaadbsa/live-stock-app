@@ -2,6 +2,7 @@ import { NuxtAuthHandler } from "#auth";
 import GoogleProvider from "next-auth/providers/google";
 
 export default NuxtAuthHandler({
+  secret: useRuntimeConfig().authSecret,
   pages: {
     signIn: "/login",
   },

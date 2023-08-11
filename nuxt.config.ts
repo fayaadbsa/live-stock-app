@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     ],
   ],
   auth: {
+    origin: process.env.NUXT_PUBLIC_ROOT_API ?? "",
     enableGlobalAppMiddleware: true,
   },
   imports: {
@@ -25,10 +26,11 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    googleClientId: process.env.NUXT_GOOGLE_CLIENT_ID,
-    googleClientSecret: process.env.NUXT_GOOGLE_CLIENT_SECRET,
+    googleClientId: process.env.NUXT_GOOGLE_CLIENT_ID ?? "",
+    googleClientSecret: process.env.NUXT_GOOGLE_CLIENT_SECRET ?? "",
+    authsecret: process.env.NUXT_AUTH_SECRET ?? "",
     public: {
-      rootApi: process.env.NUXT_PUBLIC_ROOT_API,
+      rootApi: process.env.NUXT_PUBLIC_ROOT_API ?? "",
     },
   },
 });
