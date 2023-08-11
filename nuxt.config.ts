@@ -3,8 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxthq/ui",
-    // "@nuxtjs/axios",
-    // "@nuxtjs/auth-next",
+    "@sidebase/nuxt-auth",
     [
       "@pinia/nuxt",
       {
@@ -12,9 +11,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
-  // auth: {
-  //   // Options
-  // },
+  auth: {
+    enableGlobalAppMiddleware: true,
+  },
   imports: {
     dirs: ["stores"],
   },
@@ -26,8 +25,10 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    googleClientId: process.env.NUXT_GOOGLE_CLIENT_ID,
+    googleClientSecret: process.env.NUXT_GOOGLE_CLIENT_SECRET,
     public: {
-      rootApi: process.env.NUXT_PUBLIC_ROOT_API ?? "http://localhost:3000",
+      rootApi: process.env.NUXT_PUBLIC_ROOT_API,
     },
   },
 });

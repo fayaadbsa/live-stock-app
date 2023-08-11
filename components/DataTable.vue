@@ -28,12 +28,13 @@
 import { storeToRefs } from "pinia";
 import { useAppStore } from "../stores/store";
 
-const appStore = useAppStore();
-const { data: stockData } = storeToRefs(appStore)
-
 const runtimeConfig = useRuntimeConfig();
 const EVENT_SOURCE_URL = runtimeConfig.public.rootApi + "/api/stock"
+
 const sse = new EventSource(EVENT_SOURCE_URL);
+
+const appStore = useAppStore();
+const { data: stockData } = storeToRefs(appStore)
 
 const handleErrorStream = () => {
   sse.close();

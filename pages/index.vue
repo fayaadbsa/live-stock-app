@@ -1,8 +1,8 @@
 <template>
-  <UContainer class="mt-6">
-    <h1 class="font-bold text-4xl">Live Stocks Market</h1>
+  <div>
+    <h1 class="font-bold text-2xl sm:text-4xl">Live Stocks Market</h1>
     <ClientOnly>
       <DataTable />
     </ClientOnly>
-  </UContainer>
+  </div>
 </template>
