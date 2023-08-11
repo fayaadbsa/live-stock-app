@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     googleClientId: process.env.NUXT_GOOGLE_CLIENT_ID ?? "",
     googleClientSecret: process.env.NUXT_GOOGLE_CLIENT_SECRET ?? "",
-    authsecret: process.env.NUXT_AUTH_SECRET ?? "",
+    authSecret: process.env.NUXT_AUTH_SECRET ?? "",
     public: {
       rootApi: process.env.NUXT_PUBLIC_ROOT_API ?? "",
     },
