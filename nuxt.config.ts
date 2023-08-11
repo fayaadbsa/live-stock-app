@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      rootApi: "http://localhost:3000",
+      rootApi: process.env.NUXT_PUBLIC_ROOT_API ?? "http://localhost:3000",
     },
   },
 });

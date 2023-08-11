@@ -28,6 +28,25 @@
 import { storeToRefs } from "pinia";
 import { useAppStore } from "../stores/store";
 
+const appStore = useAppStore();
+const { data: stockData } = storeToRefs(appStore)
+
+const runtimeConfig = useRuntimeConfig();
+const EVENT_SOURCE_URL = runtimeConfig.public.rootApi + "/api/stock"
+const sse = new EventSource(EVENT_SOURCE_URL);
+
+const handleErrorStream = () => {
+  sse.close();
+}
+
+const handleDataStream = (data: any) => {
+  appStore.updateData(data)
+}
+
+sse.onerror = () => handleErrorStream();
+
+sse.onmessage = (event) => handleDataStream(JSON.parse(event.data));
+
 const column = [
   {
     key: "id",
@@ -42,22 +61,5 @@ const column = [
     label: "Value"
   },
 ]
-
-const appStore = useAppStore();
-const { data: stockData } = storeToRefs(appStore)
-
-const sse = new EventSource(EVENT_SOURCE_URL);
-
-const handleErrorStream = () => {
-  sse.close();
-}
-
-const handleDataStream = (data: any) => {
-  appStore.updateData(data)
-}
-
-sse.onerror = () => handleErrorStream();
-
-sse.onmessage = (event) => handleDataStream(JSON.parse(event.data));
 
 </script>
