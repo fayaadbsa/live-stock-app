@@ -8,9 +8,9 @@
 
 <script setup lang="ts">
 useHead({
-  title: 'Stock App',
+  title: 'Live Stock App',
   meta: [
-    { name: 'description', content: 'Stock app.' }
+    { name: 'description', content: 'Live Stock app.' }
   ],
 })
 </script>
