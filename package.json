@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
+    "next-auth": "4.21.1",
     "pinia": "^2.1.6"
   },
   "overrides": {
