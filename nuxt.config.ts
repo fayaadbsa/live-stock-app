@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxthq/ui",
-    "@vueuse/nuxt",
+    // "@nuxtjs/axios",
+    // "@nuxtjs/auth-next",
     [
       "@pinia/nuxt",
       {
@@ -11,6 +12,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  // auth: {
+  //   // Options
+  // },
   imports: {
     dirs: ["stores"],
   },

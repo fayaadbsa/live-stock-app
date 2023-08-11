@@ -12,16 +12,12 @@
     "@nuxt/devtools": "latest",
     "@nuxthq/ui": "^2.7.0",
     "@types/node": "^18.17.1",
-    "@vueuse/core": "^10.3.0",
-    "@vueuse/nuxt": "^10.3.0",
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.6.5",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "@nuxtjs/auth-next": "5.0.0-1667386184.dfbbb54",
-    "@nuxtjs/axios": "^5.13.6",
     "@pinia/nuxt": "^0.4.11",
     "pinia": "^2.1.6"
   },
