@@ -6,9 +6,12 @@ export const sendEvent = async (event: any, counter: number) => {
 
   event.node.res.write(`data: ${JSON.stringify(data)}\n\n`);
 
-  await delay(2000);
+  const timer = 4000;
+  const eventLimit = 1000;
 
-  if (counter < 10) {
+  await delay(timer);
+
+  if (counter < eventLimit) {
     counter++;
     sendEvent(event, counter);
   }

@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-
 const { signIn } = useAuth()
 
 definePageMeta({
@@ -22,5 +21,4 @@ definePageMeta({
     navigateAuthenticatedTo: '/',
   }
 })
-
 </script>

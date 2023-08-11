@@ -1,22 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    "@nuxthq/ui",
-    "@sidebase/nuxt-auth",
-    [
-      "@pinia/nuxt",
-      {
-        autoImports: ["defineStore"],
-      },
-    ],
-  ],
+  modules: ["@nuxthq/ui", "@sidebase/nuxt-auth"],
   auth: {
     origin: process.env.NUXT_PUBLIC_ROOT_API ?? "",
     enableGlobalAppMiddleware: true,
-  },
-  imports: {
-    dirs: ["stores"],
   },
   css: ["~/assets/css/main.css"],
   postcss: {
